@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TRIQON - Banana Paper Bag Initiative</title>
+    <style>
+        :root {
+            --green: #2e7d32;
+            --aqua: #00ced1; /* The new Aqua Blue color */
+            --aqua-glow: rgba(0, 206, 209, 0.3);
+            --light: #f5f7f6;
+            --dark: #1b1b1b;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--light);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 6%;
+            box-shadow: 0 2px 10px rgba(0,0,0,.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 60px; /* Adjusted height for better header fit */
+            border-radius: 50%;
+        }
+
+        nav a {
+            margin: 0 12px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        /* Blue Aqua Hover Effect for Nav */
+        nav a:hover {
+            color: var(--aqua);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--aqua);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        section {
+            padding: 80px 6%;
+        }
+
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+            min-height: 70vh;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: var(--green);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            margin: 20px 0;
+            font-size: 19px;
+            color: #555;
+        }
+
+        .btn {
+            background: var(--green);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Blue Aqua Hover Effect for Buttons */
+        .btn:hover {
+            background: var(--aqua);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px var(--aqua-glow);
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,.05);
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        /* Blue Aqua Hover Effect for Cards */
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--aqua);
+            box-shadow: 0 12px 30px rgba(0, 206, 209, 0.15);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .compare {
+            max-width: 520px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .compare img {
+            width: 100%;
+            height: 300px;
+            object-fit: contain;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
+        .range {
+            width: 100%;
+            margin-top: 20px;
+            cursor: pointer;
+            accent-color: var(--aqua);
+        }
+
+        footer {
+            background: var(--dark);
+            color: #aaa;
+            text-align: center;
+            padding: 40px;
+            margin-top: 60px;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 14px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        form input:focus, form textarea:focus {
+            border-color: var(--aqua);
+            box-shadow: 0 0 0 3px var(--aqua-glow);
+        }
+
+        h2 {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .contact-details p {
+            margin-bottom: 10px;
+        }
+
+        @media(max-width: 768px) {
+            .hero h1 { font-size: 36px; }
+            header { flex-direction: column; gap: 15px; padding: 20px; }
+            nav a { margin: 0 8px; font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="logo.png.jpeg" alt="TRIQON logo" onerror="this.src='https://ui-avatars.com/api/?name=TRIQON&background=2e7d32&color=fff'">
+        <h2 style="margin:0; color:var(--green)">TRIQON</h2>
+    </div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#problem">Problem</a>
+        <a href="#future">Future</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <div class="hero-text">
+        <h1>Replace Plastic with Banana Paper Bags</h1>
+        <p>TRIQON promotes eco‑friendly banana fiber paper bags as a sustainable alternative to harmful plastic carry bags. Join the movement toward a greener planet.</p>
+        <a href="#problem" class="btn">Learn More</a>
+    </div>
+    <div class="compare card">
+        <h3>Interactive Comparison</h3>
+        <p style="font-size: 0.9em; color: #666;">Slide to see the alternative</p>
+        <img id="plasticImg" src="plastic-poly-bag.jpg" alt="Plastic Bag">
+        <img id="bananaImg" src="b.png" alt="Banana Paper Bag" style="display:none;">
+        <input type="range" min="0" max="1" value="0" step="1" class="range" oninput="switchBag(this.value)">
+        <p id="bagLabel" style="font-weight: bold; color: var(--green); margin-top: 10px;">Current Choice: Plastic Bag</p>
+    </div>
+</section>
+
+<section id="problem" style="background: #fff;">
+    <h2 style="color:var(--green)">The Environmental Crisis</h2>
+    <div class="grid">
+        <div class="card">
+            <h3 style="color: #d32f2f;">Pollution</h3>
+            <p>Plastic bags take hundreds of years to decompose, clogging our waterways and contaminating the soil we rely on for food.</p>
+        </div>
+        <div class="card">
+            <h3 style="color: #d32f2f;">Animal Harm</h3>
+            <p>Wildlife and marine life frequently mistake plastic for food, leading to thousands of preventable deaths every year.</p>
+        </div>
+        <div class="card">
+            <h3 style="color: #d32f2f;">Microplastics</h3>
+            <p>As plastic breaks down, it enters our water and food systems as microplastics, posing serious risks to human health.</p>
+        </div>
+    </div>
+</section>
+
+<section id="future">
+    <h2 style="color:var(--green)">Our Sustainable Vision</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>100% Biodegradable</h3>
+            <p>Banana fiber decomposes naturally in just a few months, returning nutrients back to the earth.</p>
+        </div>
+        <div class="card">
+            <h3>Empowering Farmers</h3>
+            <p>By utilizing agricultural waste (banana stems), we create a new revenue stream for local farming communities.</p>
+        </div>
+        <div class="card">
+            <h3>Superior Strength</h3>
+            <p>Unlike standard paper, banana fiber is naturally strong and moisture-resistant, making it perfect for reusable bags.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact" style="background: #fff;">
+    <h2 style="color:var(--green)">Get In Touch</h2>
+    <div class="grid" style="max-width: 1000px; margin: 0 auto;">
+        <div class="card contact-details">
+            <h3 style="margin-bottom: 20px;">Our Information</h3>
+            <p><b>Team:</b> Minakshi Bhatta, Sanjita Awasthi, Bandana Joshi</p>
+            <p><b>Phone:</b> +91-XXXXXXXXXX</p>
+            <p><b>Email:</b> triqon.initiative@email.com</p>
+            <p><b>Address:</b> Hetauda, Nepal</p>
+            <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee;">
+                <p><i>Building a greener Nepal, one bag at a time.</i></p>
+            </div>
+        </div>
+        <div class="card">
+            <form id="contactForm">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="5" placeholder="How can we help you?" required></textarea>
+                <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 TRIQON Sustainable Initiative</p>
+    <p style="font-size: 0.8em; margin-top: 10px; color: #666;">Designed for a Greener Tomorrow</p>
+</footer>
+
+<script>
+    // Logic for the interactive toggle
+    function switchBag(val){
+        const plastic = document.getElementById('plasticImg');
+        const banana = document.getElementById('bananaImg');
+        const label = document.getElementById('bagLabel');
+
+        if(val == 1){
+            plastic.style.display = 'none';
+            banana.style.display = 'block';
+            label.innerText = 'Current Choice: Banana Paper Bag';
+            label.style.color = 'var(--aqua)';
+        } else {
+            plastic.style.display = 'block';
+            banana.style.display = 'none';
+            label.innerText = 'Current Choice: Plastic Bag';
+            label.style.color = 'var(--green)';
+        }
+    }
+
+    // Form submission simulation
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = this.querySelector('button');
+        const originalText = btn.innerText;
+        
+        btn.innerText = 'Sending...';
+        btn.style.opacity = '0.7';
+        btn.disabled = true;
+
+        setTimeout(() => {
+            btn.innerText = 'Message Sent!';
+            btn.style.background = '#28a745';
+            this.reset();
+            
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.style.background = '';
+                btn.style.opacity = '1';
+                btn.disabled = false;
+            }, 3000);
+        }, 1500);
+    });
+</script>
+</body>
+</html>
